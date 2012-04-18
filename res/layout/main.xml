@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <ImageView
+            android:background="@drawable/logo"
+            android:contentDescription="@string/app.title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+
+    <EditText
+            android:id="@+id/search"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:inputType="text"/>
+    <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_gravity="fill_horizontal"
+            >
+        <LinearLayout
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_centerInParent="true"
+                >
+            <Button
+                    android:id="@+id/button_o"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="@string/kg_o"/>
+            <Button
+                    android:id="@+id/button_u"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="@string/kg_u"
+                    android:layout_toRightOf="@id/button_o"
+                    />
+            <Button
+                    android:id="@+id/button_n"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="@string/kg_n"
+                    android:layout_toRightOf="@id/button_u"
+                    />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+            android:id="@+id/translatebutton"
+            android:text="@string/translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+</LinearLayout>
+

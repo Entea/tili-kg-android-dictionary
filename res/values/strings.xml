@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Онлайн словать Tili.kg</string>
+    <string name="app.title">Онлайн словарь Tili.kg</string>
+    <string name="translate">Перевести</string>
+    <string name="choose_word">Выберите слово</string>
+    <string name="word_translation">Перевод слова</string>
+    <string name="kg_o">Ө</string>
+    <string name="kg_u">Ү</string>
+    <string name="kg_n">Ң</string>
+</resources>
