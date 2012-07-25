@@ -16,11 +16,11 @@
 
     <EditText
             android:id="@+id/search"
-            android:layout_height="wrap_content"
+            android:layout_height="67dp"
             android:layout_width="fill_parent"
             android:inputType="text"
             android:autoText="@string/EditBoxDefault"
-            />
+            android:layout_marginTop="8dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"/>
     <RelativeLayout
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -40,7 +40,7 @@
                     android:paddingLeft="40px"
                     android:paddingRight="40px"
                     android:paddingTop="15px"
-                    />
+                    android:layout_marginTop="8dp"/>
 
             <Button
                     android:id="@+id/button_u"
@@ -52,7 +52,7 @@
                     android:paddingLeft="40px"
                     android:paddingRight="40px"
                     android:paddingTop="15px"
-                    />
+                    android:layout_marginTop="8dp"/>
             <Button
                     android:id="@+id/button_n"
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:paddingLeft="40px"
                     android:paddingRight="40px"
                     android:paddingTop="15px"
-                    />
+                    android:layout_marginTop="8dp"/>
         </LinearLayout>
 
     </RelativeLayout>
@@ -72,10 +72,11 @@
             android:id="@+id/translatebutton"
             android:text="@string/translate"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10px"
-            />
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp" android:layout_marginLeft="16dp" android:textSize="20dp"
+            android:textStyle="bold"/>
 
     <RelativeLayout
             android:layout_height="wrap_content"
@@ -99,7 +100,7 @@
                     android:paddingTop="15px"
                     android:paddingBottom="15px"
                     android:layout_marginTop="30px"
-                    />
+                    android:layout_marginLeft="16dp" android:layout_marginRight="4dp"/>
 
             <Button
                     android:id="@+id/glossary_button"
@@ -110,16 +111,15 @@
                     android:paddingTop="15px"
                     android:paddingBottom="15px"
                     android:layout_marginTop="30px"
-                    />
+                    android:layout_marginRight="16dp" android:layout_marginLeft="4dp"/>
         </LinearLayout>
         <LinearLayout
-                android:layout_height="fill_parent"
+                android:layout_height="955dp"
                 android:layout_width="fill_parent"
                 android:orientation="horizontal"
                 android:layout_centerInParent="true"
                 android:weightSum="2"
-                android:gravity="bottom"
-                >
+                android:layout_alignParentTop="true" android:layout_marginTop="8dp" android:gravity="bottom">
         <TextView
                 android:text="@string/BottomBanner"
                 android:id="@+id/textView1"
