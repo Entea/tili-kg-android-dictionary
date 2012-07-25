@@ -58,5 +58,23 @@ public class Dictionary extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button dictButton = (Button) findViewById(R.id.dictionary_button);
+        dictButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(Dictionary.this, Dictionary.class);
+                startActivity(intent);
+            }
+        });
+        Button glossaryButton=(Button) findViewById(R.id.glossary_button);
+        glossaryButton.setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Dictionary.this, Dictionary.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
     }
 }

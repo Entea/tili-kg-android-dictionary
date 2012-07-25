@@ -3,12 +3,13 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:weightSum="3"
         >
 
     <ImageView
             android:background="@drawable/logo"
             android:contentDescription="@string/app.title"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             />
@@ -17,7 +18,9 @@
             android:id="@+id/search"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:autoText="@string/EditBoxDefault"
+            />
     <RelativeLayout
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -29,28 +32,37 @@
                 >
             <Button
                     android:id="@+id/button_o"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="@string/kg_o"/>
+                    android:text="@string/kg_o"
+                    android:layout_weight="1"
+                    android:paddingBottom="15px"
+                    android:paddingLeft="40px"
+                    android:paddingRight="40px"
+                    android:paddingTop="15px"
+                    />
+
             <Button
                     android:id="@+id/button_u"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
                     android:text="@string/kg_u"
-                    android:layout_toRightOf="@id/button_o"
+                    android:layout_weight="1"
+                    android:paddingBottom="15px"
+                    android:paddingLeft="40px"
+                    android:paddingRight="40px"
+                    android:paddingTop="15px"
                     />
             <Button
                     android:id="@+id/button_n"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
                     android:text="@string/kg_n"
-                    android:layout_toRightOf="@id/button_u"
+                    android:layout_weight="1"
+                    android:paddingBottom="15px"
+                    android:paddingLeft="40px"
+                    android:paddingRight="40px"
+                    android:paddingTop="15px"
                     />
         </LinearLayout>
 
@@ -59,11 +71,65 @@
     <Button
             android:id="@+id/translatebutton"
             android:text="@string/translate"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10px"
             />
 
+    <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="bottom"
+        >
+        <LinearLayout
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:weightSum="2"
+                android:gravity="bottom"
+            >
+            <Button
+                    android:id="@+id/dictionary_button"
+                    android:text="@string/dictionary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="15px"
+                    android:paddingBottom="15px"
+                    android:layout_marginTop="30px"
+                    />
 
-</LinearLayout>
+            <Button
+                    android:id="@+id/glossary_button"
+                    android:text="@string/glossary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="15px"
+                    android:paddingBottom="15px"
+                    android:layout_marginTop="30px"
+                    />
+        </LinearLayout>
+        <LinearLayout
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:weightSum="2"
+                android:gravity="bottom"
+                >
+        <TextView
+                android:text="@string/BottomBanner"
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:autoLink="web"
+                >
+        </TextView>
+        </LinearLayout>
+    </RelativeLayout>
+    </LinearLayout>
 

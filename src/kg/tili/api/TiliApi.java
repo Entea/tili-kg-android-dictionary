@@ -2,6 +2,7 @@ package kg.tili.api;
 
 import android.net.Uri;
 import android.util.Log;
+import kg.tili.data.GlossaryItem;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * User: entea
@@ -37,5 +39,18 @@ public class TiliApi {
 
         Log.i(TAG, "Parsing json");
         return new JSONArray(json);
+    }
+
+    public ArrayList<GlossaryItem> getGlossary(int id) throws IOException, JSONException {
+        URL url = new URL("http://kt.dev/dict/api/glosssary/" + id);
+        JSONArray jsonArray = parseJson(url);
+
+        ArrayList<GlossaryItem> items = new ArrayList<GlossaryItem>();
+        GlossaryItem item = new GlossaryItem();
+        item.setImageUrl("http://tili.kg/dict/assets/images/tag/1.jpg");
+        item.setText("Человек");
+        item.setId(1);
+        items.add(item);
+        return items;
     }
 }
