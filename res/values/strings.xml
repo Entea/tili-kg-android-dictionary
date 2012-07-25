@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Онлайн словать Tili.kg</string>
+    <string name="app_name">Онлайн словарь Tili.kg</string>
     <string name="app.title">Онлайн словарь Tili.kg</string>
     <string name="translate">Перевести</string>
     <string name="choose_word">Выберите слово</string>
@@ -8,7 +8,7 @@
     <string name="kg_o">Ө</string>
     <string name="kg_u">Ү</string>
     <string name="kg_n">Ң</string>
-    <string name="dictionary">Словарь</string>
+    <string name="dictionary">Словари от А до Я</string>
     <string name="glossary">Глоссарий</string>
     <string name="EditBoxDefault">Введите слова для перевода</string>
     <string name="BottomBanner">Заходите на наш сайт Tili.kg</string>

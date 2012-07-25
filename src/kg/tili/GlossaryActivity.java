@@ -3,7 +3,10 @@ package kg.tili;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.Toast;
 import kg.tili.api.TiliApi;
 import kg.tili.data.GlossaryItem;
@@ -24,6 +27,14 @@ public class GlossaryActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+           setContentView(R.layout.main);
+           GridView gridview = (GridView) findViewById(R.id.glossary_view);
+           gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+               public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                   Toast.makeText(GlossaryActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+               }
+           });
         int id = getIntent().getExtras().getInt("id", 0);
         TiliApi api = new TiliApi();
         try {

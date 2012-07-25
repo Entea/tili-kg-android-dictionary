@@ -2,6 +2,7 @@ package kg.tili;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -62,7 +63,8 @@ public class Dictionary extends Activity {
         Button dictButton = (Button) findViewById(R.id.dictionary_button);
         dictButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Dictionary.this, Dictionary.class);
+                Uri uri = Uri.parse("http://tili.kg/dict/dlist/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
         });
