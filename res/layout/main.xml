@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:gravity="bottom"
-        >
+            >
         <LinearLayout
                 android:layout_height="fill_parent"
                 android:layout_width="fill_parent"
@@ -90,7 +90,7 @@
                 android:layout_centerInParent="true"
                 android:weightSum="2"
                 android:gravity="bottom"
-            >
+                >
             <Button
                     android:id="@+id/dictionary_button"
                     android:text="@string/dictionary"
@@ -120,16 +120,16 @@
                 android:layout_centerInParent="true"
                 android:weightSum="2"
                 android:layout_alignParentTop="true" android:layout_marginTop="8dp" android:gravity="bottom">
-        <TextView
-                android:text="@string/BottomBanner"
-                android:id="@+id/textView1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:autoLink="web"
-                >
-        </TextView>
+            <TextView
+                    android:text="@string/BottomBanner"
+                    android:id="@+id/textView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:autoLink="web"
+                    >
+            </TextView>
         </LinearLayout>
     </RelativeLayout>
-    </LinearLayout>
+</LinearLayout>
 

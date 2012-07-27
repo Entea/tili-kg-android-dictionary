@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <style name="CustomWindowTitleText" parent="android:TextAppearance.WindowTitle">
+          <item name="android:textSize">20dip</item>
+          <item name="android:textColor">#FFFFFF</item>
+          <item name="android:textStyle">bold|italic</item>
+     </style>
+
+     <style name="CustomWindowTitleBackground">
+           <item name="android:background">#000000</item>
+     </style>
+
+     <style name="CustomWindowTitle" parent="android:TextAppearance.WindowTitle">
+          <item name="android:textAppearance">@style/CustomWindowTitleText</item>
+          <item name="android:shadowDx">0</item>
+          <item name="android:shadowDy">0</item>
+          <item name="android:shadowRadius">5</item>
+          <item name="android:shadowColor">#808080</item>
+      </style>
+    <style name="CustomWindowTitleIcon" parent="android:TextAppearance.WindowTitle">
+            </style>
+
+      <style name="TiliTheme" parent="android:Theme.Light">
+           <item name="android:windowTitleSize">40dip</item>
+           <item name="android:windowTitleStyle">@style/CustomWindowTitle</item>
+           <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+      </style>
+</resources>

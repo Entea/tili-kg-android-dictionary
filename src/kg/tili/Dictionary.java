@@ -68,11 +68,11 @@ public class Dictionary extends Activity {
                 startActivity(intent);
             }
         });
-        Button glossaryButton=(Button) findViewById(R.id.glossary_button);
+        Button glossaryButton = (Button) findViewById(R.id.glossary_button);
         glossaryButton.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     public void onClick(View view) {
-                        Intent intent = new Intent(Dictionary.this, Dictionary.class);
+                        Intent intent = new Intent(Dictionary.this, GlossaryActivity.class);
                         startActivity(intent);
                     }
                 }
