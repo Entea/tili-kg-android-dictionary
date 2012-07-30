@@ -5,6 +5,7 @@ import android.util.Log;
 import kg.tili.data.GlossaryItem;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,12 +22,17 @@ import java.util.ArrayList;
 public class TiliApi {
     public static final String TAG = TiliApi.class.getName();
 
-    public JSONArray search(String word) throws IOException, JSONException {
+    public JSONArray searchKeyword(String word) throws IOException, JSONException {
         URL url = new URL("http://tili.kg/dict/api/search/" + Uri.encode(word));
         return parseJson(url);
     }
 
     private JSONArray parseJson(URL url) throws IOException, JSONException {
+        String json = readJson(url);
+        return new JSONArray(json);
+    }
+
+    private String readJson(URL url) throws IOException {
         Log.i(TAG, "Opening input stream for " + url);
         InputStream inputStream = url.openStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -38,19 +44,58 @@ public class TiliApi {
         }
 
         Log.i(TAG, "Parsing json");
-        return new JSONArray(json);
+        return json;
     }
 
+    private JSONObject parseJsonObject(URL url) throws IOException, JSONException {
+        String json = readJson(url);
+        return new JSONObject(json);
+    }
+
+
     public ArrayList<GlossaryItem> getGlossary(int id) throws IOException, JSONException {
-        URL url = new URL("http://kt.dev/dict/api/glosssary/" + id);
-        JSONArray jsonArray = parseJson(url);
+        URL url = new URL("http://tili.kg/dict/api/glossary/" + id);
+        JSONObject jsonObject = parseJsonObject(url);
+        JSONArray tags = jsonObject.getJSONArray("tags");
 
         ArrayList<GlossaryItem> items = new ArrayList<GlossaryItem>();
-        GlossaryItem item = new GlossaryItem();
-        item.setImageUrl("http://tili.kg/dict/assets/images/tag/1.jpg");
-        item.setText("Человек");
-        item.setId(1);
-        items.add(item);
+        if (tags.length() > 0) {
+            for (int i = 0; i < tags.length(); i++) {
+                JSONObject tag = tags.getJSONObject(i);
+                GlossaryItem item = new GlossaryItem();
+                item.setImageUrl("http://tili.kg/dict/assets/images/tag/" + tag.getInt("id") + ".jpg");
+                item.setText(tag.getString("tag"));
+                item.setId(tag.getInt("id"));
+                items.add(item);
+            }
+        } else {
+            JSONArray pics = jsonObject.getJSONArray("pics");
+            JSONArray words = jsonObject.getJSONArray("words");
+            for (int j = 0; j < words.length(); j++) {
+                JSONObject word = words.getJSONObject(j);
+                GlossaryItem item = new GlossaryItem();
+                item.setText(word.getString("keyword"));
+                item.setTag(false);
+                item.setDictname("Dict id: " + word.getString("dictid"));
+                item.setValue(word.getString("value"));
+
+                for (int i = 0; i < pics.length(); i++) {
+                    JSONObject pic = pics.getJSONObject(i);
+                    if (pic.getString("word").equals(item.getText())) {
+                        item.setImageUrl(pic.getString("thumbnail"));
+                        break;
+                    }
+                }
+
+                if (item.getImageUrl() == null) {
+                    item.setImageUrl("http://tili.kg/dict/assets/images/noimage.gif");
+                }
+                items.add(item);
+            }
+        }
+
+
+
         return items;
     }
 }

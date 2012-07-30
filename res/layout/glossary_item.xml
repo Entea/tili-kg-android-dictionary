@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/widget44"
+        android:layout_x="130px"
+        android:layout_y="130px"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_margin="10px">
+    >
     <ImageView
             android:id="@+id/glossary_item_image"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content">
-
+            android:layout_height="130px"
+            android:layout_width="130px">
     </ImageView>
 
     <TextView
             android:id="@+id/glossary_item_text"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:padding="10dp"
-              android:textSize="16sp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:gravity="center_horizontal"
+            android:textColorHighlight="#656565">
     </TextView>
 </LinearLayout>

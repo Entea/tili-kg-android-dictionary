@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -49,7 +50,7 @@ public class WordListActivity extends ListActivity {
         String word = extras.getString("word");
         try {
             TiliApi api = new TiliApi();
-            translations = api.search(word);
+            translations = api.searchKeyword(word);
             if (translations.length() == 0) {
                 Toast.makeText(WordListActivity.this, "Перевод не найден", Toast.LENGTH_SHORT).show();
                 finish();
@@ -68,8 +69,10 @@ public class WordListActivity extends ListActivity {
             words = keywords.toArray(new String[keywords.size()]);
 
             setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, words));
-        } catch (Exception e) {
-            Log.e(TAG, "Error occured", e);
+        } catch (JSONException e) {
+            Toast.makeText(this, "Неправильный формат данных. Пожалуйста сообщите разработчикам", Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            Toast.makeText(this, "Нет связи с Tili. Проверьте ваше интернет соединение", Toast.LENGTH_LONG).show();
         }
 
     }
