@@ -44,6 +44,7 @@ public final class R {
     }
     public static final class string {
         public static final int BottomBanner=0x7f04000c;
+        public static final int ConnectionErrorText=0x7f04000e;
         public static final int EditBoxDefault=0x7f04000b;
         public static final int app_title=0x7f040001;
         public static final int app_name=0x7f040000;

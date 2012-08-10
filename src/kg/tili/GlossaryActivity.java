@@ -44,7 +44,7 @@ public class GlossaryActivity extends Activity {
             glossaryItems = tiliApi.getGlossary(id);
         } catch (Exception e) {
             Log.e("Glossary", "Error occured", e);
-            Toast.makeText(this, "Error", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Нет связи с Tili. Проверьте ваше интернет соединение", Toast.LENGTH_LONG).show();
         }
 
         gridview.setAdapter(new ImageAdapter(this, glossaryItems));

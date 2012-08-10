@@ -76,7 +76,7 @@ public class TiliApi {
                 GlossaryItem item = new GlossaryItem();
                 item.setText(word.getString("keyword"));
                 item.setTag(false);
-                item.setDictname("Dict id: " + word.getString("dictid"));
+                item.setDictname(word.getString("dictname"));
                 item.setValue(word.getString("value"));
 
                 for (int i = 0; i < pics.length(); i++) {
@@ -93,7 +93,6 @@ public class TiliApi {
                 items.add(item);
             }
         }
-
 
 
         return items;
