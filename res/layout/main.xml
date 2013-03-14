@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:orientation="vertical"
                   android:layout_width="fill_parent"
@@ -9,128 +10,139 @@
                   android:weightSum="3">
 
         <ImageView
-                android:background="@drawable/logo"
-                android:contentDescription="@string/app.title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                />
+            android:background="@drawable/logo"
+            android:contentDescription="@string/app.title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
 
         <EditText
-                android:id="@+id/search"
-                android:layout_height="67dp"
-                android:layout_width="fill_parent"
-                android:inputType="text"
-                android:autoText="@string/EditBoxDefault"
-                android:layout_marginTop="8dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"/>
+            android:id="@+id/search"
+            android:layout_height="67dp"
+            android:layout_width="fill_parent"
+            android:inputType="text"
+            android:autoText="@string/EditBoxDefault"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
         <RelativeLayout
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_gravity="fill_horizontal"
-                >
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_gravity="fill_horizontal">
+
             <LinearLayout
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:layout_centerInParent="true"
-                    >
-                <Button
-                        android:id="@+id/button_o"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kg_o"
-                        android:layout_weight="1"
-                        android:paddingBottom="15px"
-                        android:paddingLeft="40px"
-                        android:paddingRight="40px"
-                        android:paddingTop="15px"
-                        android:layout_marginTop="8dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
 
                 <Button
-                        android:id="@+id/button_u"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kg_u"
-                        android:layout_weight="1"
-                        android:paddingBottom="15px"
-                        android:paddingLeft="40px"
-                        android:paddingRight="40px"
-                        android:paddingTop="15px"
-                        android:layout_marginTop="8dp"/>
+                    android:id="@+id/button_o"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kg_o"
+                    android:layout_weight="1"
+                    android:paddingBottom="15px"
+                    android:paddingLeft="40px"
+                    android:paddingRight="40px"
+                    android:paddingTop="15px"
+                    android:layout_marginTop="8dp"/>
+
                 <Button
-                        android:id="@+id/button_n"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kg_n"
-                        android:layout_weight="1"
-                        android:paddingBottom="15px"
-                        android:paddingLeft="40px"
-                        android:paddingRight="40px"
-                        android:paddingTop="15px"
-                        android:layout_marginTop="8dp"/>
+                    android:id="@+id/button_u"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kg_u"
+                    android:layout_weight="1"
+                    android:paddingBottom="15px"
+                    android:paddingLeft="40px"
+                    android:paddingRight="40px"
+                    android:paddingTop="15px"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/button_n"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kg_n"
+                    android:layout_weight="1"
+                    android:paddingBottom="15px"
+                    android:paddingLeft="40px"
+                    android:paddingRight="40px"
+                    android:paddingTop="15px"
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
 
         </RelativeLayout>
 
         <Button
-                android:id="@+id/translatebutton"
-                android:text="@string/translate"
-                android:layout_width="fill_parent"
-                android:layout_height="61dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp" android:layout_marginLeft="16dp" android:textSize="20dp"
-                android:textStyle="bold"/>
+            android:id="@+id/translatebutton"
+            android:text="@string/translate"
+            android:layout_width="fill_parent"
+            android:layout_height="61dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <RelativeLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:gravity="bottom"
-                >
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="bottom">
+
             <LinearLayout
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_centerInParent="true"
-                    android:weightSum="2"
-                    android:gravity="bottom"
-                    >
-                <Button
-                        android:id="@+id/dictionary_button"
-                        android:text="@string/dictionary"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="15dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginLeft="16dp" android:layout_marginRight="4dp"/>
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:weightSum="2"
+                android:gravity="bottom">
 
                 <Button
-                        android:id="@+id/glossary_button"
-                        android:text="@string/glossary"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="15dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginRight="16dp" android:layout_marginLeft="4dp"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:layout_height="150dp"
+                    android:id="@+id/dictionary_button"
+                    android:text="@string/dictionary"
                     android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_centerInParent="true"
-                    android:weightSum="2"
-                    android:layout_alignParentTop="true" android:layout_marginTop="8dp" android:gravity="bottom">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="4dp"/>
+
+                <Button
+                    android:id="@+id/glossary_button"
+                    android:text="@string/glossary"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="4dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="150dp"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:weightSum="2"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:gravity="bottom">
+
                 <TextView
-                        android:text="@string/BottomBanner"
-                        android:id="@+id/textView1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:autoLink="web"
-                        >
-                </TextView>
+                    android:text="@string/BottomBanner"
+                    android:id="@+id/textView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:autoLink="web"></TextView>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

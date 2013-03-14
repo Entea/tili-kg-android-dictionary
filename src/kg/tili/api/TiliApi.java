@@ -94,6 +94,8 @@ public class TiliApi {
             }
         }
 
+        Log.i(getClass().getName(), "Fetched glossary items: " + items.size());
+
 
         return items;
     }

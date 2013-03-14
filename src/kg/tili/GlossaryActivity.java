@@ -11,12 +11,16 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
 import kg.tili.api.TiliApi;
+import kg.tili.async.GlossaryLoader;
 import kg.tili.data.GlossaryItem;
 
 import java.util.ArrayList;
 
-public class GlossaryActivity extends Activity {
+public class GlossaryActivity extends SherlockActivity {
     /**
      * Called when the activity is first created.
      */
@@ -24,11 +28,13 @@ public class GlossaryActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setProgressBarIndeterminateVisibility(true);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
+
+        ActionBar bar = getSupportActionBar();
+        bar.setDisplayShowHomeEnabled(true);
+        bar.setDisplayHomeAsUpEnabled(true);
 
         int id = 0;
         if (extras != null) {
@@ -36,36 +42,22 @@ public class GlossaryActivity extends Activity {
         }
 
         setContentView(R.layout.glossary_list);
-        GridView gridview = (GridView) findViewById(R.id.glossary_view);
 
-        TiliApi tiliApi = new TiliApi();
-        ArrayList<GlossaryItem> glossaryItems = new ArrayList<GlossaryItem>();
-        try {
-            glossaryItems = tiliApi.getGlossary(id);
-        } catch (Exception e) {
-            Log.e("Glossary", "Error occured", e);
-            Toast.makeText(this, "Нет связи с Tili. Проверьте ваше интернет соединение", Toast.LENGTH_LONG).show();
+        GlossaryLoader loader = new GlossaryLoader(this);
+        loader.execute(id);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case android.R.id.home:
+                Intent intent = new Intent(this, Dictionary.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        gridview.setAdapter(new ImageAdapter(this, glossaryItems));
-        setProgressBarIndeterminateVisibility(false);
-
-        final ArrayList<GlossaryItem> finalGlossaryItems = glossaryItems;
-        gridview.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                GlossaryItem item = finalGlossaryItems.get(position);
-                if (item.isTag()) {
-                    Intent intent = new Intent(GlossaryActivity.this, GlossaryActivity.class);
-                    intent.putExtra("id", item.getId());
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(GlossaryActivity.this, SingleWordActivity.class);
-                    intent.putExtra("word", item.getText());
-                    intent.putExtra("dictname", item.getDictname());
-                    intent.putExtra("value", item.getValue());
-                    startActivity(intent);
-                }
-            }
-        });
     }
 }

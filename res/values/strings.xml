@@ -17,4 +17,5 @@
     <color name="titlebackgroundcolor">#3232CD</color>
     <color name="titletextcolor">#FFFF00</color>
     <string name="ConnectionErrorText">Нет связи с Tili. Проверьте ваше интернет соединение</string>
+    <string name="loading_data">Загрузка данных</string>
 </resources>

@@ -9,8 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
-public class Dictionary extends Activity {
+public class Dictionary extends SherlockActivity {
     private static final String TAG = Dictionary.class.getName();
     Button searchButton;
     Button buttonO;

@@ -3,34 +3,45 @@
           package="kg.tili"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="8"/>
+
+    <uses-sdk
+        android:minSdkVersion="5"
+        android:targetSdkVersion="8"/>
+
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <application android:label="@string/app_name" android:icon="@drawable/icon" android:theme="@style/TiliTheme">
-        <activity android:name="Dictionary"
-                  android:label="@string/app_name"
-                  android:theme="@style/TiliTheme"
-                >
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/icon"
+        android:theme="@style/TiliTheme">
+        <activity
+            android:name="Dictionary"
+            android:label="@string/app_name"
+            android:theme="@style/TiliTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".WordListActivity"
-                  android:label="@string/choose_word"
-                  android:theme="@style/TiliTheme"
-                >
+        <activity
+            android:name=".WordListActivity"
+            android:label="@string/choose_word"
+            android:theme="@style/TiliTheme"
+            >
         </activity>
         <activity
-                android:name=".SingleWordActivity"
-                android:label="@string/word_translation"
-                android:theme="@style/TiliTheme"
-                />
+            android:name=".SingleWordActivity"
+            android:label="@string/word_translation"
+            android:theme="@style/TiliTheme"
+            />
         <activity
-                android:name=".GlossaryActivity"
-                android:label="@string/glossary_title"
-                android:theme="@style/TiliTheme"
-                />
+            android:name=".GlossaryActivity"
+            android:label="@string/glossary_title"
+            android:theme="@style/TiliTheme"
+            />
     </application>
 
 </manifest>

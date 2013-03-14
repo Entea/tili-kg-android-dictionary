@@ -4,30 +4,28 @@
 
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
-    <TextView
-            android:id="@+id/display_keyword"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            />
 
     <TextView
-            android:id="@+id/display_dict_name"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="#000000"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            />
+        android:id="@+id/display_keyword"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/display_dict_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:layout_width="fill_parent">
+
         <TextView
-                android:id="@+id/display_word"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                />
+            android:id="@+id/display_word"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
     </ScrollView>
 </LinearLayout>
